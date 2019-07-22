@@ -21,6 +21,11 @@ body {
   font-size: 0.8rem;
 }
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .saved-list {
   background-color: #fff;
   border: 0;

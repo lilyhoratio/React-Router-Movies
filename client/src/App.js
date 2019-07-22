@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom';
 import SavedList from './Movies/SavedList.js';
 import MovieList from './Movies/MovieList.js';
 import Movie from './Movies/Movie.js';
+import styled from 'styled-components';
 
 const App = () => {
   const [savedList, setSavedList] = useState( [] );

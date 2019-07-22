@@ -21,7 +21,6 @@ const Movie = (props) => {
           console.error(error);
         });
   },[props.match.params.id]);
-  // },[movie]);
   // },[]);
   
   // Uncomment this only when you have moved on to the stretch goals

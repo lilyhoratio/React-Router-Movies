@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+// import styled from 'styled-components';
+
+// Is this invalid to use styled components with function names?
+// const MovieLink = styled.Link`
+//   text-decoration: none;
+// `
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
@@ -33,7 +39,7 @@ function MovieDetails({movie}) {
   const { id, title, director, metascore, stars } = movie;
   console.log(id, title)
   return (
-    <Link to={`movies/${movie.id}`}>
+    <Link  className="link" to={`movies/${movie.id}`}>
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
