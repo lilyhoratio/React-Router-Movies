@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import SavedList from './Movies/SavedList.js';
 import MovieList from './Movies/MovieList.js';
 import Movie from './Movies/Movie.js';
 // import styled from 'styled-components';
+
+// const routes = [
+//   {
+//     path: '/',
+//     component: MovieList
+//   },
+//   {
+//     path: '/movies:id',
+//     component: Movie
+//   }
+// ]
 
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
@@ -17,7 +28,17 @@ const App = () => {
     <div>
       <SavedList list={savedList} />
       <Route exact path="/" component={MovieList}/>
-      <Route path="/movies/:id" component={Movie}/>
+      {/* <Route path="/movies/:id" component={Movie}/> */}
+      {/* Render - Pass anonymous function that returns the component we want mounted */}
+      <Route path="/movies/:id" render={(props)=> <Movie {...props} addToSavedList={addToSavedList} />}/>
+      {/* <Switch>
+        {routes.map(({path, component: C}) => (
+          <Route 
+            path={path}
+            component={C}
+          />
+        ))}
+      </Switch> */}
     </div>
   );
 };
